@@ -6,4 +6,20 @@ export default defineConfig({
       root: "./rsbuild-dist",
     },
   },
+  tools: {
+    rspack: {
+      optimization: {
+        minimize: false,
+        moduleIds: 'named'
+      },
+      module: {
+        rules: [
+          {
+            test: /utils\.js/,
+            sideEffects: false,
+          },
+        ],
+      },
+    },
+  },
 });
